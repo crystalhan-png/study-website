@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Study Web</title>
+</head>
+<body>
+<div class="main-container">
+  <div class="left-side">
+    <!-- TODO LIST --->
+    <div class="scrollable-list-container">
+      <div class="list-content">
+        <h2>To Do:</h2>
+        <input type="text" id="new-item-input" placeholder="Enter new item">
+        <input type="date" id="reminder-date">
+        <button id="add-item-button" type="button">Add</button>
+        <ul id="dynamic-list">
+          <li>
+            <input type="checkbox" id="option1" name="options" value="value1">
+            <span class ="text" contenteditable="true">Option 1</span>
+          </li>
+          <li>
+            <input type="checkbox" id="option2" name="options" value="value2">
+            <span class="text" contenteditable="true">Option 2</span>
+          </li>
+          <li>
+            <input type="checkbox" id="option3" name="options" value="value3">
+            <span class="text" contenteditable="true">Option 3</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lamp">
+      <button id="lamp"></button>
+    </div>
+  </div>  
+
+
+
+
+  <div class="right-side">
+      <!-- CALENDAR-->
+    <div class="calendar-box">
+      <div class="calendar-container">
+        <button id="prevMonth">&lt;</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth">&gt;</button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+      <div class="calendar-days" id="calendarDays">
+
+      </div>
+        
+    </div>
+    <div class="shelf">
+      <div class="camera">
+        <button id="camera"></button>
+      </div>
+      <div class="bookstack">
+        <button id="bookstack"></button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+  localStorage.setItem('currentUser', 'test@example.com');
+</script>
+
+<script src="tstorage.js"></script>
+<script src="tdynamiclist.js"></script>
+<script src="tcalendar.js"></script>
+
+
+</body>
+</html>
+

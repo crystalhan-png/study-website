@@ -1,0 +1,298 @@
+
+/* . is for class, # is for label */
+
+body {
+  background-image: url("study\ web.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: top center;
+  background-color: #E1E9E7;
+}
+
+.main-container {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.text {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* hide default checkbox */
+.item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* custom checkbox box */
+.checkmark {
+  width: 25px;
+  height: 25px;
+  background: #eee;
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+}
+
+/* checked color */
+.item input:checked + .checkmark {
+  background: #f37221;
+}
+
+/* checkmark indicator */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 4px;
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* show indicator when checked */
+.item input:checked + .checkmark::after {
+  display: block;
+}
+
+/*no bullets*/
+#dynamic-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*editable text*/
+.text {
+    display: inline-block
+}
+
+/*scrollable list*/
+.scrollable-list-container {
+    background-image: url("TO\ DO.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 330px;
+    min-height: 330px;
+    width: 210px;
+    min-width: 190px;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.list-content {
+    position: absolute;
+    top: 123px;
+    height: 300px;
+    min-height: 300px;
+    width: 200px;
+    min-width: 200px;
+}
+#dynamic-list {
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 160px;
+    min-width: 160px;
+    text-align: left;
+    overflow-y: auto;
+}
+
+li {
+    transition: opacity 0.6s ease, height 0.6s ease;
+}
+
+li.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.left-side,
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+/*             CALENDAR          */
+
+.calendar-box {
+    background-image: url("calendar.png");
+    background-size: 105%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    border: 1px solid rgba(30, 29, 29, 0.465);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: static;
+    margin: 20px;
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: space-between; /*button at edges*/
+    align-items: center;
+    margin-bottom: 10 px;
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif;
+}
+.calendar-container button {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.calendar-weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom:0.7rem;
+}
+
+.calendar-weekdays span {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns */
+    gap: 5px; /* spacing between days */
+}
+
+.calendar-days div {
+    text-align: center;
+    padding: 10px;       /* adjust height */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;     /* adjust size of day numbers */
+}
+
+.calendar-days div.today {
+    background-color: #216bf3;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .calendar-box {
+        width: 90%; /* make it responsive */
+        padding: 10px;
+    }
+    .calendar-days div {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+}
+
+.calendar-days div.has-reminders {
+  font-weight: bold;
+}
+
+.calendar-days div .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #216bf3;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.calendar-days div {
+  position: relative;
+}
+
+.lamp {
+    background-image: url("lamp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 200px;
+    width: 100px;
+    margin-left: 15px;
+    margin-bottom: 80px;
+    padding: 10px;
+}
+
+.lamp button {
+    display: none;
+}
+
+.shelf {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    justify-content: center;
+    margin-top: 18px;
+    margin-left: 5px;
+
+}
+
+.camera {
+    background-image: url("camera.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.camera button {
+    display: none;
+}
+
+.bookstack {
+    background-image: url("book\ stack.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.camera, .bookstack {
+    height: 100px;
+    width: 180px;
+}
+
+.bookstack button {
+    display: none;
+}
+
+.completed .text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.date {
+  margin-left: 8px;
+  font-size: 0.85em;
+  color: gray;
+  font-family: 'Patrick Hand', cursive;
+}
